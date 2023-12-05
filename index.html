@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="main.js" type="module"></script>
   <title>Newsletter</title>
 </head>
 <body>
 
-  <div class="container">
+  <div class="signup">
     <div class="left-box">
       <h1>Stay updated!</h1>
 
@@ -31,16 +32,31 @@
         </li>
       </ul>
   
-      <form class="form" action="">
-        <label for="email-input">Email address</label>
-        <input id="email-input" type="text" placeholder="email@company.com" required >
+      <form class="newsletter-form" action="/success.html">
+        <div class="form-labels">
+          <label for="email-input">Email address</label>
+          <p id="error-message"></p>
+        </div>
+        <input id="email-input" type="text" placeholder="email@company.com" required>
     
-        <button class="subscribe-button">Subscribe to monthly newsletter</button>
+        <button class="button">Subscribe to monthly newsletter</button>
       </form>
       
     </div>
     <div class="right-box">
       <img src="assets/images/illustration-sign-up-desktop.svg">
+    </div>
+  </div>
+
+  <div id="success" class="hidden">
+    <div class="container">
+      <img class="success-icon" src="assets/images/icon-success.svg" alt="success icon">
+
+      <h1>Thanks for subscribing!</h1>
+
+      <p>A confirmation email has been sent to <strong id="email"></strong>. Please open it and click the button inside to confirm your subscription.</p>
+
+      <button id="dismiss" class="button">Dismiss message</button>
     </div>
     
   </div>
